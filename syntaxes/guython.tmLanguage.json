@@ -1,0 +1,66 @@
+{
+  "scopeName": "source.guython",
+  "name": "Guython",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#functions" },
+    { "include": "#gpd" },
+    { "include": "#strings" },
+    { "include": "#comments" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(def|while|if|else|goto|import|input|print|guython|exit|debug|var|ver)\\b",
+          "name": "keyword.control.guython"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "\\b(createWindow|setWindowColor|waitGui|createButton|createLabel|createEntry|createImage|setText|readText|showMessage|read|write|ngi|eval|alias)\\b",
+          "name": "support.function.guython"
+        }
+      ]
+    },
+    "gpd": {
+      "patterns": [
+        {
+          "match": "\\b(gpd pkgs|gpd install|gpd import|gpd list|gpd help)\\b",
+          "name": "keyword.package.guython"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.guython"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "\\{",
+          "end": "\\}",
+          "name": "comment.block.guython"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b\\d+(\\.\\d+)?\\b",
+          "name": "constant.numeric.guython"
+        }
+      ]
+    }
+  },
+  "fileTypes": ["gy", "guy"],
+  "uuid": "guython-tmlanguage-0001"
+}

@@ -1,0 +1,12 @@
+{
+  "Print": {
+    "prefix": "print",
+    "body": ["print \"$1\""],
+    "description": "Print statement"
+  },
+  "Function": {
+    "prefix": "def",
+    "body": ["def${1:FunctionName}_", ".print \"Function called\""],
+    "description": "Define function"
+  }
+}

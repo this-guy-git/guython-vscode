@@ -1,0 +1,69 @@
+{
+  "name": "guython",
+  "version": "2.0.0",
+  "main": "./dist/extension.js",
+  "icon": "file.png",
+  "publisher": "tgl",
+  "displayName": "Guython",
+  "description": "Guython language support for VSCode",
+  "activationEvents": [
+    "onCommand:guython.runFile",
+    "onLanguage:guython"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/this-guy-git/guython-vscode"
+  },
+  "files": [
+  "dist",
+  "interpreter",
+  "language-configuration.json",
+  "syntaxes",
+  "file.png"
+],
+  "contributes": {
+    "commands": [
+      {
+        "command": "guython.runFile",
+        "title": "▶ Run Guython File"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "guython.runFile",
+          "when": "resourceExtname == .gy",
+          "group": "navigation"
+        }
+      ]
+    },
+    "grammars": [
+      {
+        "language": "guython",
+        "scopeName": "source.guython",
+        "path": "./syntaxes/guython.tmLanguage.json"
+      }
+    ],
+
+    "languages": [
+      {
+        "id": "guython",
+        "extensions": [".gy", ".guy"],
+        "aliases": ["Guython"],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.1.3",
+    "vscode": "^1.80.0"
+  }
+}
